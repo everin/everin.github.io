@@ -1,17 +1,35 @@
-<!DOCTYPE html>
-<html ng-app>
-<head>
-	<meta charset="UTF-8">
-	<title>GitHub Everin</title>
-	<script src="js/angular.min.js" async></script>
-</head>
+﻿<!DOCTYPE html>
+<html x-ng-app>
 
-<body>
-	Insert your name: <input type="text" ng-model="name" /> 
+	<head>
+		<meta charset="UTF-8">
+		<title>GitHub Everin</title>
+		<script src="js/angular.min.js" async></script>
+	</head>
 
-	Ciao da {{name}}!
-	
-	
-</body>
+	<body>
+		<div id="prova1" name="prova1">
+			<h3>Hello application</h3>
+			Insert your name: <input type="text" x-ng-model="name" /> 
 
-</html>
+			Hello {{name}}!
+		</div>
+
+		<div id="prova2" name="prova2" x-ng-init="names=['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eigth', 'nine', 'ten']">
+			<h3>List of elements</h3>
+			<ul>
+				<li x-ng-repeat="name in names">{{ name }}</li
+		    </ul>
+		</div>
+
+		<div id="prova3" name="prova3" 
+		    x-ng-init="customers=[{name:'Mario',city:'Milano',invoice:'1152.00',birthDate:'1288323623006'},{name:'Gianni',city:'Roma',invoice:'3881.20',birthDate:'1388323623006'}]">
+			<h3>Filter ordered list of elements</h3>
+			Insert a name: <input type="text" x-ng-model="filterName" /> 
+			<ul>
+				<li x-ng-repeat="customer in customers | orderBy:'city' | filter:filterName">{{$index + 1}}: {{customer.name | uppercase}}, {{customer.city}} - {{customer.invoice | currency:'€'}} - {{customer.birthDate | date:'dd/M/yyyy'}}</li>
+		    </ul>
+		</div>		
+	</body>
+
+</html> 
