@@ -1,10 +1,12 @@
 ﻿<!DOCTYPE html>
-<html x-ng-app>
+<html x-ng-app="app">
 
 	<head>
 		<meta charset="UTF-8">
 		<title>GitHub Everin</title>
-		<script src="js/angular.min.js" async></script>
+		<script src="js/angular.min.js"></script>
+		<script src="js/controllers.js"></script>
+		<!--<script src="js/HelloController.js"></script>-->
 	</head>
 
 	<body x-ng-cloak>
@@ -40,7 +42,22 @@
 			<ul>
 				<li x-ng-repeat="customer in customers | orderBy:'city' | filter:customerFilter:strict">{{$index + 1}}: {{customer.name | uppercase}}, {{customer.city}} - {{customer.invoice | currency:'€'}} - {{customer.birthDate | date:'dd/M/yyyy'}}</li>
 		    </ul>
-		</div>				
+		</div>	
+
+		<div id="prova5" name="prova5" x-ng-controller="SimpleController">
+			<h3>Filter ordered list of elements from controller {{ getName() }}</h3>
+			Search: <input type="text" x-ng-model="filterName" /> 
+			<ul>
+				<li x-ng-repeat="vendor in vendors | orderBy:'city' | filter:filterName">{{$index + 1}}: {{vendor.name | uppercase}}, {{vendor.city}} - {{vendor.debt | currency:'€'}} - {{vendor.birthDate | date:'dd/M/yyyy'}}</li>
+		    </ul>
+		</div>
+
+		<div id="prova6" name="prova6" x-ng-controller="HelloController">
+			<h3>Click function from controller {{ getName() }}</h3>
+			<button type="button" x-ng-click="clickName()">Click Me 1!</button>
+			<button type="button" onclick="genericClick()">Click Me 2!</button>
+		</div>	
+		
 	</body>
 
 </html> 
