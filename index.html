@@ -25,11 +25,22 @@
 		<div id="prova3" name="prova3" 
 		    x-ng-init="customers=[{name:'Mario',city:'Milano',invoice:'1152.00',birthDate:'1288323623006'},{name:'Gianni',city:'Roma',invoice:'3881.20',birthDate:'1388323623006'}]">
 			<h3>Filter ordered list of elements</h3>
-			Insert a name: <input type="text" x-ng-model="filterName" /> 
+			Search: <input type="text" x-ng-model="filterName" /> 
 			<ul>
 				<li x-ng-repeat="customer in customers | orderBy:'city' | filter:filterName">{{$index + 1}}: {{customer.name | uppercase}}, {{customer.city}} - {{customer.invoice | currency:'€'}} - {{customer.birthDate | date:'dd/M/yyyy'}}</li>
 		    </ul>
-		</div>		
+		</div>	
+		
+		<div id="prova4" name="prova4" 
+		    x-ng-init="customers=[{name:'Mario',city:'Milano',invoice:'1152.00',birthDate:'1288323623006'},{name:'Gianni',city:'Roma',invoice:'3881.20',birthDate:'1388323623006'}]">
+			<h3>Filter ordered list of elements 2</h3>
+			Search by name: <input type="text" x-ng-model="customerFilter.name" /> <br />
+			Search by city: <input type="text" x-ng-model="customerFilter.city" /> <br />
+			Equality: <input type="checkbox" x-ng-model="strict" /> 
+			<ul>
+				<li x-ng-repeat="customer in customers | orderBy:'city' | filter:customerFilter:strict">{{$index + 1}}: {{customer.name | uppercase}}, {{customer.city}} - {{customer.invoice | currency:'€'}} - {{customer.birthDate | date:'dd/M/yyyy'}}</li>
+		    </ul>
+		</div>				
 	</body>
 
 </html> 
