@@ -2,29 +2,73 @@
 <html x-ng-app="app">
 
 	<head>
-		<meta charset="UTF-8">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">	
 		<title>GitHub Everin</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<script src="js/jquery-3.1.0.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
 		<script src="js/angular.min.js"></script>
 		<script src="js/controllers.js"></script>
-		<!--<script src="js/HelloController.js"></script>-->
+		
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->		
 	</head>
 
 	<body x-ng-cloak>
-		<div id="prova1" name="prova1">
+	
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+		  <div class="container">
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			  </button>
+			  <a class="navbar-brand" href="index.html">GitHub Everin</a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+			  <ul class="nav navbar-nav">
+				<li class="active"><a href="index.html">Home</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+				  <ul class="dropdown-menu">
+					<li><a href="#">Action</a></li>
+					<li><a href="#">Another action</a></li>
+					<li><a href="#">Something else here</a></li>
+					<li role="separator" class="divider"></li>
+					<li class="dropdown-header">Nav header</li>
+					<li><a href="#">Separated link</a></li>
+					<li><a href="#">One more separated link</a></li>
+				  </ul>
+                </li>
+			  </ul>
+			</div>
+		  </div>
+		</nav>	
+	
+		<div class="container" id="prova1" name="prova1">
 			<h3>Hello application</h3>
 			Insert your name: <input type="text" x-ng-model="name" /> 
 
 			Hello {{name}}!
 		</div>
 
-		<div id="prova2" name="prova2" x-ng-init="names=['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eigth', 'nine', 'ten']">
+		<div class="container" id="prova2" name="prova2" x-ng-init="names=['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eigth', 'nine', 'ten']">
 			<h3>List of elements</h3>
 			<ul>
 				<li x-ng-repeat="name in names">{{ name }}</li
 		    </ul>
 		</div>
 
-		<div id="prova3" name="prova3" 
+		<div class="container" id="prova3" name="prova3" 
 		    x-ng-init="customers=[{name:'Mario',city:'Milano',invoice:'1152.00',birthDate:'1288323623006'},{name:'Gianni',city:'Roma',invoice:'3881.20',birthDate:'1388323623006'}]">
 			<h3>Filter ordered list of elements</h3>
 			Search: <input type="text" x-ng-model="filterName" /> 
@@ -33,7 +77,7 @@
 		    </ul>
 		</div>	
 		
-		<div id="prova4" name="prova4" 
+		<div class="container" id="prova4" name="prova4" 
 		    x-ng-init="customers=[{name:'Mario',city:'Milano',invoice:'1152.00',birthDate:'1288323623006'},{name:'Gianni',city:'Roma',invoice:'3881.20',birthDate:'1388323623006'}]">
 			<h3>Filter ordered list of elements 2</h3>
 			Search by name: <input type="text" x-ng-model="customerFilter.name" /> <br />
@@ -44,7 +88,7 @@
 		    </ul>
 		</div>	
 
-		<div id="prova5" name="prova5" x-ng-controller="SimpleController">
+		<div class="container" id="prova5" name="prova5" x-ng-controller="SimpleController">
 			<h3>Filter ordered list of elements from controller {{ getName() }}</h3>
 			Search (with ng-click): <input type="text" x-ng-model="filterName" x-ng-click="clickName()"/> 
 			<ul>
@@ -52,13 +96,13 @@
 		    </ul>
 		</div>
 
-		<div id="prova6" name="prova6" x-ng-controller="HelloController">
+		<div class="container" id="prova6" name="prova6" x-ng-controller="HelloController">
 			<h3>Click function from controller {{ getName() }}</h3>
 			<button type="button" x-ng-click="clickName()">Click Me 1!</button>
 			<button type="button" onclick="genericClick()">Click Me 2!</button>
 		</div>	
 		
-		<div id="prova7" name="prova7" x-ng-controller="SimpleController">
+		<div class="container" id="prova7" name="prova7" x-ng-controller="SimpleController">
 			<h3>BIS: Filter ordered list of elements from controller {{ getName() }}</h3>
 			Search: <input type="text" x-ng-model="filterName" /> 
 			<ul>
