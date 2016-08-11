@@ -10,6 +10,7 @@
 		<script src="js/jquery-3.1.0.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
 		<script src="js/angular.min.js"></script>
+		<script src="js/SimpleController.js"></script>
 		<script src="js/controllers.js"></script>
 		
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -110,6 +111,26 @@
 		    </ul>
 		</div>
 		
+		<div class="container" id="prova8" name="prova8" x-ng-controller="InPageController">
+			<h3>Click function from controller {{ getName() }}</h3>
+			<button type="button" x-ng-click="clickName()">Click Me 1!</button>		
+		</div>
 	</body>
+	
+	<script>
+	var inPage = angular.module('inPage', []);
+	
+	inPage.controller('InPageController', function ($scope){
+		$scope.name = 'InPageController';
+		
+		$scope.getName = function() {
+			return $scope.name;
+	    };
+
+		$scope.clickName = function() {
+			alert('INPAGE CLICK: '.concat($scope.name));
+		};
+	});
+	</script>
 
 </html> 
