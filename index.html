@@ -41,7 +41,7 @@
 				<li class="dropdown">
 				  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
 				  <ul class="dropdown-menu">
-					<li><a href="#">Action</a></li>
+					<li><a href="inpage.html">In page controller</a></li>
 					<li><a href="#">Another action</a></li>
 					<li><a href="#">Something else here</a></li>
 					<li role="separator" class="divider"></li>
@@ -54,6 +54,8 @@
 			</div>
 		  </div>
 		</nav>	
+		
+		<div class="container">
 	
 		<div class="container" id="prova1" name="prova1">
 			<h3>Hello application</h3>
@@ -110,27 +112,9 @@
 				<li x-ng-repeat="vendor in vendors | orderBy:'city' | filter:filterName">{{$index + 1}}: {{vendor.name | uppercase}}, {{vendor.city}} - {{vendor.debt | currency:'€'}} - {{vendor.birthDate | date:'dd/M/yyyy'}}</li>
 		    </ul>
 		</div>
-		
-		<div class="container" id="prova8" name="prova8" x-ng-controller="InPageController">
-			<h3>Click function from controller {{ getName() }}</h3>
-			<button type="button" x-ng-click="clickName()">Click Me 1!</button>		
-		</div>
-	</body>
-	
-	<script>
-	var inPage = angular.module('inPage', []);
-	
-	inPage.controller('InPageController', function ($scope){
-		$scope.name = 'InPageController';
-		
-		$scope.getName = function() {
-			return $scope.name;
-	    };
 
-		$scope.clickName = function() {
-			alert('INPAGE CLICK: '.concat($scope.name));
-		};
-	});
-	</script>
+		</div>
+		
+	</body>
 
 </html> 

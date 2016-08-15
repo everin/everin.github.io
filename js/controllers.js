@@ -1,4 +1,4 @@
-var app = angular.module('app', ['simple', 'hello', 'inPage']);
+var app = angular.module('app', ['simple', 'hello']);
 var hello = angular.module('hello', []);
 
 hello.controller('HelloController', function ($scope){
