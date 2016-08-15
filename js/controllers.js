@@ -1,13 +1,12 @@
 var app = angular.module('app', ['ngRoute', 'simple', 'hello']);
 
 app.config(function ($routeProvider) {
-
-    alert('Route Provider:' + $routeProvider);
+	log('Route provider: ' + $routeProvider);
 
     $routeProvider
     .when('/',
     {
-        controller: 'menu',
+        controller: '',
         templateUrl: 'partials/withoutController.html'
     })
     .when('/simple',
@@ -23,13 +22,18 @@ app.config(function ($routeProvider) {
     .otherwise({ redirectTo: '/' });
 });
 
-app.controller('menu', function($scope){
-	$scope.menuUrl = 'partials/menuGenerale.html';
+app.controller('App', function($scope, $rootScope){
+	$rootScope.menuUrl = 'partials/generalMenu.html';
 });
 
 function genericClick() {
     alert('ciao da genericClick');
-}
+};
 
+function log(text){
+    var date = new Date();
+   	var time = date.getTime();
+   	console.log(date + ' - ' + time + ' >>> ' + text);
+};
 
 

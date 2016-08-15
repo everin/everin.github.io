@@ -19,10 +19,10 @@
 	<body x-ng-cloak>
 	
 <!-- MENU -->
-		<div x-ng-controller="menu" x-ng-include="menuUrl"></div>
+		<div x-ng-controller="App" x-ng-include="$root.menuUrl"></div>
 		
-		<div x-ng-controller="menu" class="container">
-		<p>Menu: {{ menuUrl }}</p>
+		<div x-ng-controller="App" class="container">
+		<p>Menu: {{ $root.menuUrl }}</p>
 		<a href="#/">Without Controller</a>
 		<br>
 		<a href="#/simple">With Simple Controller</a>
