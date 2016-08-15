@@ -7,7 +7,7 @@ app.config(function ($routeProvider) {
     $routeProvider
     .when('/',
     {
-        controller: '',
+        controller: 'menu',
         templateUrl: 'partials/withoutController.html'
     })
     .when('/simple',
@@ -21,6 +21,10 @@ app.config(function ($routeProvider) {
         templateUrl: 'partials/withHelloController.html'
     })    
     .otherwise({ redirectTo: '/' });
+});
+
+app.controller('menu', function($scope){
+	$scope.menuUrl = 'partials/menuGenerale.html';
 });
 
 function genericClick() {
