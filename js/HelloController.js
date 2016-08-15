@@ -1,13 +1,13 @@
-(function(angular) {
-	'use strict';
-	angular.module('controllerExample', []).controller('HelloController', ['$scope', HelloController]);
+var hello = angular.module('hello', []);
 
-	function HelloController($scope){
-		$scope.name = "HelloController";
-		$scope.hello = "Hello from HelloController";
+hello.controller('HelloController', function ($scope){
+	$scope.name = 'HelloController';
 
-		$scope.getName = function() {
-			return name;
-		};
-	}
-})(window.angular);
+	$scope.getName = function() {
+		return $scope.name;
+	};
+	
+	$scope.clickName = function() {
+		alert('HELLO CLICK: '.concat($scope.name));
+	};
+});

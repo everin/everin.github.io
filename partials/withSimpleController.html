@@ -1,0 +1,15 @@
+<div class="container" id="prova1" name="prova1" x-ng-controller="SimpleController">
+	<h3>Filter ordered list of elements from controller {{ getName() }}</h3>
+	Search (with ng-click): <input type="text" x-ng-model="filterName" x-ng-click="clickName()"/> 
+	<ul>
+		<li x-ng-repeat="vendor in vendors | orderBy:'city' | filter:filterName">{{$index + 1}}: {{vendor.name | uppercase}}, {{vendor.city}} - {{vendor.debt | currency:'€'}} - {{vendor.birthDate | date:'dd/M/yyyy'}}</li>
+    </ul>
+</div>
+
+<div class="container" id="prova2" name="prova2" x-ng-controller="SimpleController">
+	<h3>BIS: Filter ordered list of elements from controller {{ getName() }}</h3>
+	Search: <input type="text" x-ng-model="filterName" /> 
+	<ul>
+		<li x-ng-repeat="vendor in vendors | orderBy:'city' | filter:filterName">{{$index + 1}}: {{vendor.name | uppercase}}, {{vendor.city}} - {{vendor.debt | currency:'€'}} - {{vendor.birthDate | date:'dd/M/yyyy'}}</li>
+    </ul>
+</div>
