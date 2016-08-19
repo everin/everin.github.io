@@ -26,6 +26,12 @@ app.controller('App', function($scope, $rootScope){
 	$rootScope.menuUrl = 'partials/generalMenu.html';
 });
 
+simple.factory('SimpleFactory', simpleFactory);
+simple.service('SimpleService', simpleService);
+
+hello.factory('SimpleFactory', simpleFactory);
+hello.service('SimpleService', simpleService);
+
 function genericClick() {
     alert('ciao da genericClick');
 };

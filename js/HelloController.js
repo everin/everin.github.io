@@ -1,15 +1,15 @@
 var hello = angular.module('hello', []);
 
-hello.controller('HelloController', function ($scope, $rootScope){
+hello.controller('HelloController', function ($scope, $rootScope, SimpleFactory, SimpleService){
 	$rootScope.menuUrl = 'partials/controllerMenu.html';
 
 	$scope.name = 'HelloController';
 
 	$scope.getName = function() {
-		return $scope.name;
+		return SimpleFactory.getName($scope.name);
 	};
 	
 	$scope.clickName = function() {
-		alert('HELLO CLICK: '.concat($scope.name));
+		SimpleService.clickName($scope.name);
 	};
 });
