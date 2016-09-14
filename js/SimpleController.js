@@ -17,3 +17,5 @@ controllers.SimpleController = function ($scope, $rootScope, SimpleFactory, Simp
 };
 
 simple.controller(controllers);
+
+simple.filter(simpleFilters);
